@@ -2,8 +2,8 @@
   --main-color: #000;
   --secondary-color: #111;
   --txt-color: #fff;
-  --img-bg-color: rgba(240, 240, 240, 0.9);
-  --backdrop-color: rgba(240, 240, 240, 0.9);
+  --img-bg-color: rgba(240, 240, 240, 1);
+  --backdrop-color: rgba(240, 240, 240, 1);
   --gap-length: 2px;
   --row-height: 200px;
   --column-width: 220px;
@@ -13,8 +13,8 @@
   --main-color: #ddd;
   --secondary-color: #eee;
   --txt-color: #111;
-  --img-bg-color: rgba(20, 20, 20, 0.9);
-  --backdrop-color: rgba(30, 30, 30, 0.9);
+  --img-bg-color: rgba(20, 20, 20, 1);
+  --backdrop-color: rgba(30, 30, 30, 1);
 }
 
 .gg-box {
@@ -59,9 +59,10 @@
   max-width: 100%;
   max-height: 100%;
   margin: 0 auto;
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
 }
 
-.gg-btn {
+.gg-btn {  
   width: 35px;
   height: 35px;
   background: var(--main-color);
@@ -78,6 +79,7 @@
   padding-left: 2px;
   position: fixed;
   bottom: 10px;
+  opacity: .3;
 }
 
 .gg-btn:hover {
