@@ -32,20 +32,15 @@ for (let i = 0; i < l; i++) {
 
     if (l > 1) {
       if (route === first) {
-        prevBtn.hidden = true;
-        prevImg = false;
+        prevImg = currentImg.parentElement.lastElementChild;
         nextImg = currentImg.nextElementSibling;
       } else if (route === last) {
-        nextBtn.hidden = true;
-        nextImg = false;
+        nextImg = currentImg.parentElement.firstElementChild;
         prevImg = currentImg.previousElementSibling;
       } else {
         prevImg = currentImg.previousElementSibling;
         nextImg = currentImg.nextElementSibling;
       }
-    } else {
-      prevBtn.hidden = true;
-      nextBtn.hidden = true;
     }
 
     screenItem.addEventListener("click", function(e) {
@@ -66,9 +61,6 @@ for (let i = 0; i < l; i++) {
         prevImg = currentImg.previousElementSibling;
         imgItem.innerHTML = '<img src="' + prevImg.src + '">';
         currentImg = currentImg.previousElementSibling;
-        let mainImg = document.querySelector(".gg-image > img").src;
-        nextBtn.hidden = false;
-        prevBtn.hidden = mainImg === first;
       } catch (e) {
         prevImg = currentImg.parentElement.lastElementChild;
         imgItem.innerHTML = '<img src="' + prevImg.src + '">';
@@ -81,9 +73,6 @@ for (let i = 0; i < l; i++) {
         nextImg = currentImg.nextElementSibling;
         imgItem.innerHTML = '<img src="' + nextImg.src + '">';
         currentImg = currentImg.nextElementSibling;
-        let mainImg = document.querySelector(".gg-image > img").src;
-        prevBtn.hidden = false;
-        nextBtn.hidden = mainImg === last;
       } catch (e) {
         nextImg = currentImg.parentElement.firstElementChild;
         imgItem.innerHTML = '<img src="' + nextImg.src + '">';
